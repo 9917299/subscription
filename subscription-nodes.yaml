@@ -1,0 +1,60 @@
+# 自建节点订阅 (JP / US / UAE) — 2026-09-21
+# 导入方式: Clash Verge → 订阅 → 新建 → 本地文件 → 选此文件
+# 也可作为机场订阅源部署到任意静态托管
+
+proxies:
+  - name: "JP-东京"
+    type: vless
+    server: 216.23.87.204
+    port: 443
+    uuid: c5748477-7bdb-4f85-a1ac-882eb58e49cb
+    network: tcp
+    udp: true
+    tls: true
+    flow: xtls-rprx-vision
+    servername: www.microsoft.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: gVdP_cyXB6Zt8UQm5yzDJsP_39lNZ33EzEOIhwNAPCk
+      short-id: 42a80081eacba586
+
+  - name: "US-达拉斯"
+    type: vless
+    server: 192.255.193.161
+    port: 57101
+    uuid: f89a16c3-eae1-40f8-988c-3523c4f4ff00
+    network: tcp
+    udp: true
+    tls: true
+    flow: xtls-rprx-vision
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 0IEaT--ye0mKhs4VbEeybbrxXjgiYnJjiey3CfQIdHI
+      short-id: 2fa49d38
+
+  - name: "阿联酋-Dubai"
+    type: vless
+    server: 139.185.44.42
+    port: 8443
+    uuid: b0fa80ad-d759-4bcc-a0fd-f802d53b5a88
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.microsoft.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: VlWMFvYxwGIsctI7BfOgC4PCG3EMToD7_H8vWcRB42w
+      short-id: 855834d3b002ad21
+
+proxy-groups:
+  - name: "🚀 代理"
+    type: select
+    proxies:
+      - JP-东京
+      - US-达拉斯
+      - 阿联酋-Dubai
+      - DIRECT
+
+rules:
+  - GEOIP,CN,DIRECT
+  - MATCH,🚀 代理

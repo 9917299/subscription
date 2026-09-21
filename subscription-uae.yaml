@@ -1,0 +1,28 @@
+# 阿联酋-迪拜 VLESS+Reality 订阅
+# 服务器: 139.185.44.42:8443 (sing-box, Narwhal Cloud)
+# 出口: Dubai, AE | 更新: 2026-09-21
+
+proxies:
+  - name: "阿联酋-Dubai"
+    type: vless
+    server: 139.185.44.42
+    port: 8443
+    uuid: b0fa80ad-d759-4bcc-a0fd-f802d53b5a88
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.microsoft.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: VlWMFvYxwGIsctI7BfOgC4PCG3EMToD7_H8vWcRB42w
+      short-id: 855834d3b002ad21
+
+proxy-groups:
+  - name: "🚀 代理"
+    type: select
+    proxies:
+      - 阿联酋-Dubai
+      - DIRECT
+
+rules:
+  - GEOIP,CN,DIRECT
+  - MATCH,🚀 代理
