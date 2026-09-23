@@ -1,6 +1,7 @@
-# 自建节点订阅 (JP / US / SG / UAE) — 2026-09-23
-# 导入方式: Clash Verge → 订阅 → 新建 → 本地文件 → 选此文件
-# 也可作为机场订阅源部署到任意静态托管
+# 自建节点订阅 (US / SG / UAE) — 2026-09-23
+# 导入方式: Clash Verge → 订阅 → 新建 → URL
+# 主(国内可达): https://gh-proxy.com/https://raw.githubusercontent.com/9917299/subscription/main/subscription-nodes.yaml
+# 备(jsdelivr): https://cdn.jsdelivr.net/gh/9917299/subscription@main/subscription-nodes.yaml
 
 proxies:
   - name: "US-圣何塞"
@@ -36,22 +37,7 @@ proxies:
     servername: www.microsoft.com
     skip-cert-verify: true
 
-  - name: "US-达拉斯"
-    type: vless
-    server: 192.255.193.161
-    port: 57101
-    uuid: f89a16c3-eae1-40f8-988c-3523c4f4ff00
-    network: tcp
-    udp: true
-    tls: true
-    flow: xtls-rprx-vision
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: 0IEaT--ye0mKhs4VbEeybbrxXjgiYnJjiey3CfQIdHI
-      short-id: 2fa49d38
-
-  - name: "阿联酋-Dubai"
+  - name: "阿联酋-Dubai-REALITY"
     type: vless
     server: 139.185.44.42
     port: 8443
@@ -71,8 +57,7 @@ proxy-groups:
       - US-圣何塞
       - SG-老乌龟A
       - SG-老乌龟B
-      - US-达拉斯
-      - 阿联酋-Dubai
+      - 阿联酋-Dubai-REALITY
       - DIRECT
 
 rules:
