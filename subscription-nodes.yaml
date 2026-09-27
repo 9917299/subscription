@@ -37,6 +37,12 @@ proxies:
     servername: www.microsoft.com
     skip-cert-verify: true
 
+  - name: "US-达拉斯-TS"
+    type: socks5
+    server: 100.106.218.114
+    port: 1080
+    udp: true
+
   - name: "阿联酋-Dubai-REALITY"
     type: vless
     server: 139.185.44.42
@@ -58,8 +64,11 @@ proxy-groups:
       - SG-老乌龟A
       - SG-老乌龟B
       - 阿联酋-Dubai-REALITY
+      - US-达拉斯-TS
       - DIRECT
 
 rules:
+  # Tailscale 网段直连: 否则 Clash 会把"连 100.x 的 socks 节点"自己也送进代理 -> 自环
+  - IP-CIDR,100.64.0.0/10,DIRECT
   - GEOIP,CN,DIRECT
   - MATCH,🚀 代理
