@@ -88,13 +88,13 @@ proxy-groups:
   - name: "🚀 代理"
     type: select
     proxies:
-      - US-圣何塞
-      - SG-老乌龟A
-      - SG-老乌龟B
-      - 阿联酋-Dubai-REALITY
-      - US-达拉斯-TS
-      - US-达拉斯-REALITY
-      - US-出口-Dubai中转
+      - "SG-老乌龟A"
+      - "US-达拉斯-REALITY"
+      - "US-出口-Dubai中转"
+      - "US-达拉斯-TS"
+      - "阿联酋-Dubai-REALITY"
+      - "US-圣何塞"
+      - "SG-老乌龟B"
       - DIRECT
 
 rules:
