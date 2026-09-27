@@ -37,6 +37,21 @@ proxies:
     servername: www.microsoft.com
     skip-cert-verify: true
 
+  - name: "US-达拉斯-REALITY"
+    type: vless
+    server: 192.255.193.161
+    port: 57101
+    uuid: f89a16c3-eae1-40f8-988c-3523c4f4ff00
+    network: tcp
+    udp: true
+    tls: true
+    flow: xtls-rprx-vision
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 0IEaT--ye0mKhs4VbEeybbrxXjgiYnJjiey3CfQIdHI
+      short-id: 2fa49d38
+
   - name: "US-达拉斯-TS"
     type: socks5
     server: 100.106.218.114
@@ -78,6 +93,7 @@ proxy-groups:
       - SG-老乌龟B
       - 阿联酋-Dubai-REALITY
       - US-达拉斯-TS
+      - US-达拉斯-REALITY
       - US-出口-Dubai中转
       - DIRECT
 
